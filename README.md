@@ -6,4 +6,4 @@ island_blast.sh - automates the blast with a specific format and runs the other 
 island_finder.py - parses the BLAST and performs quality control
 arrange_nodes.py - deals with things like recombination, and broken contigs. This script produces final island sequences and report file.
 
-parse_island_blast.py -  a seperate script used to run BLAST and construct a xls table with precense/absence info about the pathogenetic islands.
+parse_island_blast.py -  a seperate script used to run BLAST and construct an xls table with precense/absence info about the pathogenetic islands.
