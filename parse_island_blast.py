@@ -3,10 +3,6 @@
 import argparse, subprocess, sys
 from Bio import SeqIO
 
-#blast_file = "/home/genome/joseph7e/feng/island_blasts/GA_vs_all_sequences.blast" #sys.argv[1]
-#island_info_file = "/home/genome/joseph7e/feng/island_blasts/island_info.txt"
-#sample_ids = ["CT20E","CT24E","CT4264","CT4287","CTVP10C","CTVP11C","CTVP12C","CTVP14C","CTVP15C","CTVP17C","CTVP19C","CTVP1C","CTVP21C","CTVP27C","CTVP28C","CTVP31C","CTVP32C","CTVP34C","CTVP37C","CTVP3C","G149","G3654","MA398","MA561","MAVP-1","MAVP110","MAVP-13","MAVP-50","MAVP53","MAVP55","MAVP-66","MAVP67","MAVP-71","MAVP-73","MAVP76","MAVP87","MAVP91","MAVP93","MAVP-95","MAVP98","MAVP-D","MAVP-F","MAVP-G","MAVP-J","MAVP-R","MAVP-S","MAVP-U","MAVP-X","MEVP12","MEVP13","MEVP15","MEVP7"]
-
 parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 
 #OPTIONAL ARGUMENTS
