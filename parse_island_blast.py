@@ -3,6 +3,10 @@
 import argparse, subprocess, sys
 from Bio import SeqIO
 
+#blast_file = "/home/genome/joseph7e/feng/island_blasts/GA_vs_all_sequences.blast" #sys.argv[1]
+#island_info_file = "/home/genome/joseph7e/feng/island_blasts/island_info.txt"
+#sample_ids = ["CT20E","CT24E","CT4264","CT4287","CTVP10C","CTVP11C","CTVP12C","CTVP14C","CTVP15C","CTVP17C","CTVP19C","CTVP1C","CTVP21C","CTVP27C","CTVP28C","CTVP31C","CTVP32C","CTVP34C","CTVP37C","CTVP3C","G149","G3654","MA398","MA561","MAVP-1","MAVP110","MAVP-13","MAVP-50","MAVP53","MAVP55","MAVP-66","MAVP67","MAVP-71","MAVP-73","MAVP76","MAVP87","MAVP91","MAVP93","MAVP-95","MAVP98","MAVP-D","MAVP-F","MAVP-G","MAVP-J","MAVP-R","MAVP-S","MAVP-U","MAVP-X","MEVP12","MEVP13","MEVP15","MEVP7"]
+
 parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 
 #OPTIONAL ARGUMENTS
@@ -10,9 +14,9 @@ parser.add_argument("-v", "--verbose", help="increase output verbosity", action=
 parser.add_argument("-i","--input_fasta", help="New sequence(s) to identify islands in, assumes headers are in format >Strain:unique_id")
 parser.add_argument("-b","--blast_file", help="BLAST hits in format")
 parser.add_argument("-s", "--single_sample", help="input a single sample, no formatting required ,samplename=filename", action="store_true")
-parser.add_argument("-pid","--cutoff_percent_identity", help="set the number of threads for blast", type=float,default=70)
-parser.add_argument("-len", "--cutoff_hit_length", help="set the number of threads for blast", type=float, default=500)
-parser.add_argument("-cov", "--cutoff_island_coverage", help="set the number of threads for blast", type=float, default=50)
+parser.add_argument("-pid","--cutoff_percent_identity", help="minimum identity of blast result", type=float,default=70)
+parser.add_argument("-len", "--cutoff_hit_length", help="min length of blast results allowed", type=float, default=500)
+parser.add_argument("-cov", "--cutoff_island_coverage", help="used for absence/present identifier in final graph", type=float, default=50)
 parser.add_argument("-t","--blast_threads", help="set the number of threads for blast", type=str, default="24")
 parser.add_argument('-out', '--output_tsv', help="name of output file", type=str, default="island_results.tsv")
 log_file_handle = open('island_finder_log.txt','w')
